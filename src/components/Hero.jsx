@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="overlay"></div>
         <img src={heroBg} alt="Studio working atmosphere" className="bg-image" fetchPriority="high" />
       </div>
-      
+
       <div className="container hero-content">
         <h1 className="hero-title">
           Where Stories Get Their <span className="highlight">Perfect Cut.</span>
@@ -85,17 +85,17 @@ const Hero = () => {
         }
         
         /* Underline effect */
-        .highlight::after {
-          content: '';
-          position: absolute;
-          bottom: 5px;
-          left: 0;
-          width: 100%;
-          height: 15px;
-          background: rgba(99, 102, 241, 0.4);
-          z-index: -1;
-          transform: skewX(-15deg);
-        }
+        // .highlight::after {
+        //   content: '';
+        //   position: absolute;
+        //   bottom: 5px;
+        //   left: 0;
+        //   width: 100%;
+        //   height: 15px;
+        //   background: rgba(99, 102, 241, 0.4);
+        //   z-index: -1;
+        //   transform: skewX(-15deg);
+        // }
 
         .hero-subtitle {
           font-size: 1.25rem;
