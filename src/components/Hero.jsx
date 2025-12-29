@@ -7,7 +7,7 @@ const Hero = () => {
     <section className="hero">
       <div className="hero-background">
         <div className="overlay"></div>
-        <img src={heroBg} alt="Studio working atmosphere" className="bg-image" />
+        <img src={heroBg} alt="Studio working atmosphere" className="bg-image" fetchPriority="high" />
       </div>
       
       <div className="container hero-content">

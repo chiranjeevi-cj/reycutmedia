@@ -13,11 +13,11 @@ const About = () => {
               We are a collective of visual storytellers obsessed with the perfect cut.
             </p>
             <p className="body-text">
-              At REYCUT MEDIA, we believe that editing is the soul of cinema. It's where the magic truly happens. 
+              At REYCUT MEDIA, we believe that editing is the soul of cinema. It's where the magic truly happens.
               Our team combines technical expertise with artistic vision to deliver content that doesn't just look good—it feels right.
               From high-energy social media clips to cinematic brand documentaries, we bring professional polish to every frame.
             </p>
-            
+
             <div className="features-list">
               <div className="feature">
                 <Users size={24} className="feature-icon" />
@@ -33,11 +33,11 @@ const About = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="about-visual">
-             <div className="visual-card">
-               <img src={aboutVisual} alt="Team working in studio" className="about-img" />
-             </div>
+            <div className="visual-card">
+              <img src={aboutVisual} alt="Team working in studio" className="about-img" loading="lazy" decoding="async" />
+            </div>
           </div>
         </div>
       </div>

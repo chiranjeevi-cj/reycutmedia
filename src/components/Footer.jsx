@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-brand">
             <div className="footer-logo-container">
-              <img src={logoFinal} alt="REYCUT MEDIA" className="footer-logo" />
+              <img src={logoFinal} alt="REYCUT MEDIA" className="footer-logo" loading="lazy" decoding="async" />
               <h2 className="footer-brand-text">REYCUT <span>MEDIA</span></h2>
             </div>
             <p>Where Stories Get Their Perfect Cut.</p>
