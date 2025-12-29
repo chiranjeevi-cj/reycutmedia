@@ -57,7 +57,7 @@ const Reviews = () => {
 
       <style>{`
         .reviews-section {
-          background-color: #fff;
+          background-color: var(--color-bg-main);
         }
 
         .reviews-grid {
@@ -68,7 +68,7 @@ const Reviews = () => {
 
         .review-card {
           padding: 2rem;
-          background: #fff;
+          background: var(--color-bg-card, var(--color-bg-main));
           border: 1px solid var(--color-border);
           border-radius: var(--radius-lg);
           transition: transform 0.3s ease;

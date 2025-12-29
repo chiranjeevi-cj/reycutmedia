@@ -64,7 +64,7 @@ const WhatWeDo = () => {
 
       <style>{`
         .what-we-do {
-          background-color: #fff;
+          background-color: var(--color-bg-main);
         }
 
         .section-header {
@@ -97,7 +97,7 @@ const WhatWeDo = () => {
         }
 
         .step-card {
-          background: #fff;
+          background: var(--color-bg-card, var(--color-bg-main));
           border: 1px solid var(--color-border);
           border-radius: var(--radius-lg);
           padding: 2rem;
@@ -140,7 +140,7 @@ const WhatWeDo = () => {
           right: 1rem;
           font-size: 4rem;
           font-weight: 800;
-          color: #f1f5f9;
+          color: var(--color-bg-alt);
           z-index: -1;
           line-height: 1;
         }
