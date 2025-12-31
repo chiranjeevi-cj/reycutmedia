@@ -19,7 +19,7 @@ const Contact = () => {
               <h3>Email Us</h3>
               <p>reycutmedia@gmail.com</p>
             </a>
-            
+
             <a href="https://wa.me/917871261403" target="_blank" rel="noopener noreferrer" className="contact-card">
               <div className="icon-box">
                 <MessageCircle size={32} />
@@ -27,7 +27,7 @@ const Contact = () => {
               <h3>WhatsApp</h3>
               <p>+91 78712 61403</p>
             </a>
-            
+
             <a href="https://instagram.com/rey_cuts_01" target="_blank" rel="noopener noreferrer" className="contact-card">
               <div className="icon-box">
                 <Instagram size={32} />
@@ -58,7 +58,7 @@ const Contact = () => {
         }
 
         .contact-card {
-          background: #fff;
+          background: var(--color-bg-card, var(--color-bg-main));
           padding: 2rem;
           border-radius: var(--radius-lg);
           text-align: center;

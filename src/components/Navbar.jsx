@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import logoFinal from '../assets/logo-final-v3.png';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Moon, Sun } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,6 +43,9 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
+          <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle theme">
+            {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -51,18 +56,36 @@ const Navbar = () => {
         {/* Mobile Menu Overlay */}
         <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
           {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href} 
+            <a
+              key={link.name}
+              href={link.href}
               className="mobile-nav-link"
               onClick={() => setIsOpen(false)}
             >
               {link.name}
             </a>
           ))}
+          <button
+            onClick={() => {
+              toggleTheme();
+              setIsOpen(false);
+            }}
+            className="mobile-theme-toggle"
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? (
+              <>
+                <Moon size={24} /> <span>Dark Mode</span>
+              </>
+            ) : (
+              <>
+                <Sun size={24} /> <span>Light Mode</span>
+              </>
+            )}
+          </button>
         </div>
       </div>
-      
+
       <style>{`
         .navbar {
           position: fixed;
@@ -76,14 +99,36 @@ const Navbar = () => {
         }
         
         .navbar.scrolled {
-          background: rgba(255, 255, 255, 0.95);
+          background: var(--color-bg-main);
           backdrop-filter: blur(10px);
           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
           padding: 1rem 0;
+          opacity: 0.95;
         }
         
-        .navbar.scrolled .logo-text, .navbar.scrolled .nav-link, .navbar.scrolled .mobile-menu-btn {
+        .navbar.scrolled .logo-text, .navbar.scrolled .nav-link, .navbar.scrolled .mobile-menu-btn, .navbar.scrolled .theme-toggle {
           color: var(--color-text-main);
+        }
+
+        .theme-toggle {
+          background: none;
+          border: none;
+          color: #fff;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.5rem;
+          border-radius: 50%;
+          transition: background-color 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar.scrolled .theme-toggle:hover {
+          background-color: var(--color-bg-alt);
         }
 
         .nav-container {
@@ -127,6 +172,7 @@ const Navbar = () => {
         .nav-links {
           display: flex;
           gap: 2rem;
+          align-items: center;
         }
 
         .nav-link {
@@ -167,7 +213,7 @@ const Navbar = () => {
           right: -100%;
           width: 100%;
           height: 100vh;
-          background: #fff;
+          background: var(--color-bg-main);
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -185,6 +231,20 @@ const Navbar = () => {
           font-weight: 700;
           margin: 1.5rem 0;
           color: var(--color-text-main);
+        }
+
+        .mobile-theme-toggle {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          margin-top: 2rem;
+          padding: 0.75rem 1.5rem;
+          border-radius: var(--radius-md);
+          background: var(--color-bg-alt);
+          color: var(--color-text-main);
+          font-size: 1.25rem;
+          font-weight: 600;
+          border: 1px solid var(--color-border);
         }
 
         @media (max-width: 768px) {

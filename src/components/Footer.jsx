@@ -20,8 +20,8 @@ const Footer = () => {
       </div>
       <style>{`
         .footer {
-          background-color: #1e293b;
-          color: #fff;
+          background-color: var(--color-footer-bg);
+          color: var(--color-footer-text);
           padding: 4rem 0;
         }
 
@@ -44,14 +44,14 @@ const Footer = () => {
         .footer-logo {
           height: 32px;
           margin-bottom: 0;
-          filter: brightness(0) invert(1);
+          filter: var(--footer-logo-filter);
         }
         
         .footer-brand-text {
           font-size: 1.5rem;
           margin: 0;
           line-height: 1;
-          color: #fff;
+          color: var(--color-footer-text);
         }
         
         .footer-brand-text span {
@@ -59,7 +59,7 @@ const Footer = () => {
         }
 
         .footer-brand p {
-          color: #94a3b8;
+          color: #94a3b8; /* Keep muted slate for description, readable on dark */
         }
 
         .footer-copyright {
